@@ -15,7 +15,7 @@
     },
     "repository": {
         "type": "git",
-        "url": "git@github.com:rkallan/eslint-config-react.git"
+        "url": "git@github.com:rkallan/javascript-helpers.git"
     },
     "license": "MIT",
     "author": {
@@ -23,7 +23,7 @@
         "email": "r.kallan@upcmail.nl"
     },
     "contributors": [
-        "Ravi Kallan <ravikallan@kateinnovations.com>"
+        "Ravi Kallan <r.kallan@upcmail.nl>"
     ],
     "main": "index.js",
     "files": [
