@@ -10,6 +10,7 @@ import {
     ucFirst,
     htmlStringToPlain,
     camelCaseToTitleCase,
+    clearEmptyCharsOnBothEnds,
 } from "./convertString";
 import getDayDifference from "./date";
 import {
@@ -52,6 +53,7 @@ export {
     ucFirst,
     htmlStringToPlain,
     camelCaseToTitleCase,
+    clearEmptyCharsOnBothEnds,
     getDayDifference,
     isAttributeValueExistingInArray,
     replaceElementAttributeValue,

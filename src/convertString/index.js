@@ -72,4 +72,21 @@ const camelCaseToTitleCase = (value) => {
     return newValue;
 };
 
-export { convertToGivenSeparator, capitalize, camelCase, capitalizeFirstLetterWord, ucFirst, htmlStringToPlain, camelCaseToTitleCase };
+const clearEmptyCharsOnBothEnds = (value) => {
+    if (getType(value) !== "string") return undefined;
+
+    const newValue = value.replace(/(^[\s\n\t]+|[\s\n\t]+$)/g, "");
+
+    return newValue;
+};
+
+export {
+    convertToGivenSeparator,
+    capitalize,
+    camelCase,
+    capitalizeFirstLetterWord,
+    ucFirst,
+    htmlStringToPlain,
+    camelCaseToTitleCase,
+    clearEmptyCharsOnBothEnds,
+};

@@ -1,5 +1,5 @@
-/* eslint-disable no-console */
 import getType from "../getType";
+import { clearEmptyCharsOnBothEnds } from "../convertString";
 
 const inValidCharactersLength = (value, lengthCharacters = 0, isMinimal = true, returnBoolean = false) => {
     const isValidValueType = ["string", "number"].includes(getType(value));
@@ -40,20 +40,13 @@ const validations = {
     isEmpty: (value) => {
         const valueIsType = getType(value);
 
-        switch (valueIsType) {
-            case "string":
-                return value.trim().length === 0;
-            case "array":
-                return value.length === 0;
-            case "object":
-                return Object.keys(value).length === 0;
-            case "number":
-                return Number.isNaN(value);
-            case "boolean":
-                return false;
-            default:
-                return true;
-        }
+        if (valueIsType === "string") return !clearEmptyCharsOnBothEnds(value).length;
+        if (valueIsType === "array") return !value.length;
+        if (valueIsType === "object") return !Object.keys(value).length;
+        if (valueIsType === "number") return Number.isNaN(value);
+        if (valueIsType === "boolean") return false;
+
+        return true;
     },
     isNotEmpty: (value, returnBoolean = false) => {
         const inValid = !validations.isEmpty(value);
